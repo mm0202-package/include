@@ -1,19 +1,31 @@
 {
   "name": "@mm0202/include",
-  "version": "0.0.1-5",
+  "version": "0.0.1-6",
   "description": "",
   "license": "MIT",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "bin": {
+    "include": "./lib/cli/include/index.js"
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
   "files": [
-    "dist"
+    "lib"
   ],
   "scripts": {
-    "build": "rimraf dist && tsc",
-    "test": "jest --forceExit --detectOpenHandles --maxWorkers=1 --passWithNoTests",
+    "test": "jest --forceExit --detectOpenHandles --passWithNoTests",
+    "test:watch": "yarn test --watch",
     "test:coverage": "jest --coverage --passWithNoTests",
+    "build": "rimraf dist && tsc",
+    "watch": "tsc -w",
     "lint": "eslint ./**/*.{js,ts,jsx,tsx}",
     "lint:fix": "eslint ./**/*.{js,ts,jsx,tsx} --fix",
+    "include": "include",
+    "demo:watch:firestore.rules": "include -s src/cli/include/resolveIncludes/__test__/rules/index.rules -w src/cli/include/resolveIncludes/__test__/rules",
+    "demo:watch:md": "include -s src/cli/include/resolveIncludes/__test__/markdown/root.md -w src/cli/include/resolveIncludes/__test__/markdown",
     "version:prerelease": "yarn version --prerelease",
     "version:patch": "yarn version --patch",
     "version:minor": "yarn version --minor",
@@ -33,6 +45,9 @@
     "hooks": {
       "pre-push": "yarn lint"
     }
+  },
+  "dependencies": {
+    "commander": "^7.2.0"
   },
   "devDependencies": {
     "@types/jest": "^27.0.1",

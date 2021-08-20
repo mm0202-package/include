@@ -1,0 +1,5 @@
+match /someCollection2/{someDocument} {
+  allow read: if isAdmin();
+  _include "write.rules"
+}
+
