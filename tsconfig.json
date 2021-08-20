@@ -1,6 +1,10 @@
 {
   "compilerOptions": {
-    "target": "ES5",
+    "outDir":"./lib",
+    "declarationDir": "./lib",
+    "rootDir": "./src",
+    "baseUrl": "./",
+    "target": "es5",
     "module": "commonjs",
     "moduleResolution": "node",
     "resolveJsonModule": true,
@@ -11,23 +15,19 @@
     "declarationMap": true,
     "sourceMap": true,
     "pretty": true,
+    "downlevelIteration": true,
     "newLine": "lf",
-    "outDir": "dist",
-    "lib": ["ES2015","ES7"],
+    "jsx": "react",
+    "lib": [
+      "es2015",
+      "es7",
+      "dom"
+    ],
     "types": [
-      "jest"
+      "jest",
+      "node"
     ]
-//    "baseUrl": "./",
-    //    "paths": {
-    //      "~/*": [
-    //        "./src/*"
-    //      ]
-    //    }
   },
-  "exclude": [
-    "jest.config.js",
-    "jest.setup.ts",
-    "**/*.test.ts",
-    "**/*.test.js"
-  ]
+  "include": ["./src"],
+  "exclude": ["dist"]
 }

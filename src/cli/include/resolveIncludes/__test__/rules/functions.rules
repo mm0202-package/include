@@ -1,0 +1,3 @@
+function isAdmin() {
+  return request.auth.token.admin == true;
+}
