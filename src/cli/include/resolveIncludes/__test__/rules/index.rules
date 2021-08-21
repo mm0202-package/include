@@ -5,10 +5,10 @@ service cloud.firestore {
 
     match /someCollection/{someDocument} {
       allow read: if isAdmin();
-      _include "sameCollection/write.rules"
+      _include "someCollection/write.rules"
     }
 
-    _include "sameCollection2/index.rules"
+    _include "someCollection2/index.rules"
   }
 }
 
