@@ -1,18 +1,9 @@
-# template_npm-package
- 
-# setup
-## tune package.json
-`npm init` & merge to template
+# include
 
-## secrets for CI
-- NPM_TOKEN
-- SLACK_WEBHOOK_URL
+主にFirestoreセキュリティルールを想定した、テキストファイルの結合ツールです。
 
-# publish
-`npm version ...` => publish by github workflow
+Firestoreセキュリティルールに限らず、Markdownなど、テキストファイルであれば何でも使えるので、ツール名は`include`としています。
 
-## `npm version` options
-check by `npm version -h`
+使い方は、以下のページを参照してください。
 
-# unpublish
-`npm unpublish [<@scope>/]<pkg>[@<version>]` in 72 hours
+[Firestoreセキュリティルール向けのビルド(ファイル結合)ツールを作ってみた！](https://mlog.wlaboratory.com/entry/category/release/package/include)

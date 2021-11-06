@@ -3,8 +3,9 @@ name: publish
 on:
   push:
     tags:
-      - v*.*.*
-      - v*.*.*-*
+      - 'v*.*.*'
+      - 'v*.*.*-*'
+      - 'publish-*'
 
 jobs:
   publish:
